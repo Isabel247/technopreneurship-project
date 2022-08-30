@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .login-sec {
+  position: relative;
+  min-height: 100vh;
+  background: #ccc585;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.form-container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.form-container .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #ff0;
+  transition: 0.5s;
+}
+.imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.form-container .user .formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 40px;
+  transition: 0.5s;
+}
+.formBx form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+.formBx form input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.formBx form input[type="submit"] {
+  max-width: 100px;
+  background: #677eff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+.signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.signup a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #677eff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.form-container .signupBx {
+  pointer-events: none;
+}
+.form-container.active .signupBx {
+  pointer-events: initial;
+}
+.form-container .signupBx .formBx {
+  left: 100%;
+}
+.form-container.active .signupBx .formBx {
+  left: 0;
+}
+.form-container .signupBx .imgBx {
+  left: -100%;
+}
+.form-container.active .signupBx .imgBx {
+  left: 0;
+}
+
+.form-container .signinBx .formBx {
+  left: 0;
+}
+.form-container.active .signinBx .formBx {
+  left: 100%;
+}
+.form-container .signinBx .imgBx {
+  left: 0;
+}
+.form-container.active .signinBx .imgBx {
+  left: -100%;
+}
+@media (max-width: 991px) {
+  .login-sec .form-container {
+    max-width: 400px;
+  }
+  .login-sec .form-container .imgBx {
+    display: none;
+  }
+  .login-sec .form-container .formBx {
+    width: 100%;
+  }
+}
+    </style>
+</head>
+<body>
+    <section class="login-sec">
+    <div class="form-container">
+        <div class="user signinBx">
+            <div class="imgBx">
+                <img src="./assets/original.jpg" alt="">
+            </div>
+            <div class="formBx">
+                <form action="" method="POST">
+                    <h2>sign in</h2>
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit" name="login" value="Login" id="login">
+                    <p class="signup">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up.</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="user signupBx">
+            <div class="formBx">
+                <form action="" method="POST">
+                    <h2>create an account</h2>
+                    <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                    <input type="email" name="email"  id="email" placeholder="Email Address" required>
+                    <input type="password" name="password" id="password"  placeholder="Password" required>
+                    <input type="text" name="mobile-num" id="mobile-num" placeholder="Mobile Number" required>
+                
+                    <input type="submit" name="submit" id="submit" value="Register">
+                    <p class="signup">already have an account? <a href="#" onclick="toggleForm()">Sign in.</a></p>
+                </form>
+            </div>
+            <div class="imgBx">
+                <img src="./assets/pola.png" alt="">
+            </div>
+        </div>
+    </div>
+    </section>
+
+    
+
+
+    <script type="text/javascript">
+        function toggleForm(){
+            var container = document.querySelector('.form-container');
+            container.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

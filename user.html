@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adore Hue Prints || Users</title>
+    <link rel="stylesheet" href="./css/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu">
+    <nav>
+        <label for="">Adore Hue Prints</label>
+    
+        <ul>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    
+        <label for="menu" class="menu-bar">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+    <div class="side-menu">
+        <center>
+            <div class="avatar"><img src="./assets/bighead.svg" alt=""></div>
+            <br><br>
+            <h2>Administrator</h2>
+        </center>
+        <br>
+        <a href="admin-index.html" ><i class="fa fa-envelope"></i><span>Request</span></a>
+        <a href="order.html" ><i class="fa fa-user"></i><span>Orders</span></a>
+        <a href="settings.html" ><i class="fa fa-calendar"></i><span>Products</span></a>
+        <a href="user.html" ><i class="fa fa-users"></i><span>Users</span></a>
+        <a href="settings.php" ><i class="fa fa-cogs"></i><span>Website Settings</span></a>
+    
+        <a href="logout.php" class="logout"><span>Logout</span></a>
+    </div>
+
+    
+    <section class="data">
+        <h2>User</h2>
+
+        <table class="table" >
+            <thead>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Date Regitered</th>
+                <th>Action</th>
+            </thead>
+
+            
+             
+                <tbody>
+                    <tr>
+                        <td>Sab Laurel</td>
+                        <td>123 Tondo, Manila</td>
+                        <td>June 2, 2021</td>
+                        <td>
+                            <a href="members.php?edit=<?php echo $row['id'];?>" class="btns btn-orange" ><i class="fa fa-edit"></i></a>
+                            <a href="members.php?delete=<?php echo $row['id'];?>" class="btns btn-red"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Omar Navarro</td>
+                        <td>123 Tondo, Manila</td>
+                        <td>June 2, 2021</td>
+                        <td>
+                            <a href="members.php?edit=<?php echo $row['id'];?>" class="btns btn-orange" ><i class="fa fa-edit"></i></a>
+                            <a href="members.php?delete=<?php echo $row['id'];?>" class="btns btn-red"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            
+           
+        </table>
+     
+       
+    
+    </section>
+</body>
+</html>
